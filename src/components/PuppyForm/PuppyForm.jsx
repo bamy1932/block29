@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useAddPuppyMutation } from "./puppySlice";
+import { useNavigate } from "react-router-dom";
+import { useAddPuppyMutation } from "./puppyFormSlice";
 
 /**
  * @component
@@ -8,6 +9,7 @@ import { useAddPuppyMutation } from "./puppySlice";
 export default function PuppyForm() {
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
+  const navigate = useNavigate();
   const [addPuppy] = useAddPuppyMutation();
 
   // TODO: Use the `addPuppy` mutation to add a puppy when the form is submitted
@@ -21,6 +23,7 @@ export default function PuppyForm() {
     try {
       const response = await addPuppy({ name, breed }).unwrap();
       console.log(response);
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
