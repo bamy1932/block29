@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Nav from "./components/Nav";
 import PuppyDetails from "./components/PuppyDetails/PuppyDetails";
 import PuppyList from "./components/PuppyList/PuppyList";
 import PuppyForm from "./components/PuppyForm/PuppyForm";
@@ -20,6 +20,7 @@ export default function App() {
     <>
       <h1>Puppy Bowl</h1>
       <Router>
+        <Nav />
         <Routes>
           <Route path="/players" element={<PuppyForm />} />
           <Route

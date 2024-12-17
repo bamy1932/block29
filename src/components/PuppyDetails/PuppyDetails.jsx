@@ -7,7 +7,7 @@ import { useGetPuppyQuery, useDeletePuppyMutation } from "./puppyDetailsSlice";
  * Shows comprehensive information about the selected puppy, if there is one.
  * Also provides a button for users to remove the selected puppy from the roster.
  */
-// eslint-disable-next-line react/prop-types
+// eslint-disable-next-line react/prop-types, no-unused-vars
 export default function PuppyDetails({ selectedPuppyId, setSelectedPuppyId }) {
   // TODO: Grab data from the `getPuppy` query
 
